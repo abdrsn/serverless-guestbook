@@ -6,24 +6,24 @@ const guestbook = {
   // retrieve the existing guestbook entries
   get() {
     return $.ajax({
-      type: 'GET',
-      url: `${apiUrl}/entries`,
-      dataType: 'json'
+      type:'GET',
+      url:'${apiUrl}/entries',
+      dataType:'json'
     });
   },
   // add a single guestbood entry
   add(name, email, comment) {
     console.log('Sending', name, email, comment)
     return $.ajax({
-      type: 'PUT',
-      url: `${apiUrl}/entries`,
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({
+      type:'PUT',
+      url:'${apiUrl}/entries',
+      contentType:'application/json; charset=utf-8',
+      data:JSON.stringify({
         name,
         email,
         comment,
       }),
-      dataType: 'json',
+      dataType:'json',
     });
   }
 };
